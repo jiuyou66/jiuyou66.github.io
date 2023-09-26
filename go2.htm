@@ -1,0 +1,120 @@
+
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>九游乐乐社区分站 </title>
+   <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<style type="text/css">
+    .container-fluid{
+        margin-top:0px !important;
+    }
+    .system-message{
+        display: flex;align-items: center;justify-content: center;flex-direction: column; 
+    }
+    .system-message .title{font-weight: bold;color: red;text-align: center;margin-bottom: 20px;font-size: 20px}
+    .system-message .box{display: flex;flex-direction: column;width: 450px;height:240px;border: solid 1px #C8C8C8;border-radius: 15px;}
+    .system-message .box .title1{color: #000;font-weight: bold;text-align: center;padding: 15px 0px;font-size: 20px}
+    .system-message .box .wait{color: #000;font-weight: bold;text-align: center;font-size: 15px;}
+    .system-message .box .wait .span{color:red;padding-right:3px;}
+    .system-message .box .url-box{color: #000;text-align: center;font-size: 15px;padding: 15px 0px;padding-bottom: 0px;}
+    .http-box{height: 50px;width:94%;margin: auto;line-height:50px;border: solid 1px #C8C8C8;border-radius:8px;}
+    .btn-transfer{height:40px;width:120px;margin: auto;line-height:40px;border-radius:20px;background:#3C79B5;text-align: center;font-size:14px;color: #fff}
+</style>    
+
+    <style type="text/css">
+        selector-for-some-widget {
+          box-sizing: content-box;
+        }
+        .container-fluid{
+            margin-top: 30px;
+        }
+
+        .list-inline {
+            padding-left: 0;
+            list-style: none;
+            width: 100%;
+            float: left;
+        }
+
+        li{
+            display: inline-block;
+        }
+        h5{
+            font-size: 14px;
+            font-weight: bold;
+        }
+        strong{
+            font-size: 12px;
+        }
+        .btn-group-sm>.btn, .btn-sm{
+            padding: .12rem .22rem;
+        }
+        .theme{
+            color: #4B81AE
+        }
+
+        .theme1{
+           color: #AFACA9
+        }
+        .head1{padding-right:30px;padding-top:10px;font-size: 16px;padding:4px 40px;background: #666666;width: 100%}
+        .adv{position:fixed;left:3px;bottom:0px;background: #fff;}
+        .adv-top{position:fixed;right:3px;top:0px;background: #fff;}
+    </style>
+</head>
+    
+<body>
+
+<div class="container-fluid">
+<!-- <div class="col-md-6"> -->
+
+    <div class="system-message" style="height: 705px;">
+       <!-- <div class="title">请保存新网址,旧网址将在3天内关闭</div> -->
+       <div class="box">
+           <div class="title1">即将跳转到目标网址</div>
+            <div class="wait"><span id="wait" class="span">5</span>秒后跳转...</div>
+            <div class="url-box">
+                <div class="http-box">https://www.acgsk.com</div>
+           </div>
+            <div style="cursor:pointer"  class="btn-transfer">立即跳转</div>
+       </div>
+    </div>
+ 
+<!-- </div>      -->
+</div>
+<div class="row justify-content-content">
+               
+</div> 
+<script src="/js/jquery.min.js"></script>
+      
+     <script type="text/javascript">
+        (function(){
+            var wait = document.getElementById('wait')
+                // href = document.getElementById('href').href;
+            var interval = setInterval(function(){
+                console.log(wait)
+                if(wait!=0){
+                    
+                  var time = --wait.innerHTML;
+                }
+
+                if(time <= 0) {
+                   location.href = 'https://www.acgsk.com';
+                    clearInterval(interval);
+                };
+            }, 1000);
+
+            $('.btn-transfer').on('click',function (e) {
+                clearInterval(interval);
+                location.href = 'https://www.acgsk.com';
+              })
+          
+            $('.system-message').css('height',document.documentElement.clientHeight)
+        })();
+        
+
+    </script>
+
+
+</body></html>
